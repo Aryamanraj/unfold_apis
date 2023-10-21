@@ -2,6 +2,20 @@
 
 NFT Platue is a powerful and efficient platform offering a suite of APIs to interact with the NFT smart contracts, providing functionalities like minting NFTs, starting auctions, placing bids, and more. These APIs are built on Express and interact with Ethereum smart contracts.
 
+## Deployment
+
+The APIs are deployed on [Spheron.network](https://app.spheron.network/) using its Compute Engine, a global, production-ready environment optimized for high-performance applications.
+
+Access the API documentation: [API Docs](http://provider.palmito.duckdns.org:31748/api-docs/).
+
+## Spheron Network
+
+Spheron is a Platform as a Service (PaaS) designed for dApps, providing compute, decentralized storage, CDN, and web hosting services out of the box. The Spheron Compute engine simplifies deployment, ensuring secure and encrypted connections, and facilitates containerization for efficient deployment and scalability.
+
+## Smart Contract Deployment
+
+The smart contract is deployed on the Avalanche C-Chain Fuji Testnet with the contract address: [`0x0b38bdc019954E5d8a26Be7523812e9BfeB240BE`](https://cchain.explorer.avax-test.network/address/0x0b38bdc019954E5d8a26Be7523812e9BfeB240BE/contracts).
+
 ## Getting Started
 
 1. Clone the repository
@@ -203,16 +217,3 @@ All errors are returned with a 500 HTTP status code and a JSON body containing t
   "message": "Error message here"
 }
 ```
-
-## Deployment
-
-The APIs are deployed on [Spheron.network](https://app.spheron.network/) using its Compute Engine, a global, production-ready environment optimized for high-performance applications.
-
-Access the API documentation: [API Docs](http://provider.palmito.duckdns.org:31748/api-docs/).
-
-## Spheron Network
-
-Spheron is a Platform as a Service (PaaS) designed for dApps, providing compute, decentralized storage, CDN, and web hosting services out of the box. The Spheron Compute engine simplifies deployment, ensuring secure and encrypted connections, and facilitates containerization for efficient deployment and scalability.
-
-
-
