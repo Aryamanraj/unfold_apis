@@ -204,3 +204,15 @@ All errors are returned with a 500 HTTP status code and a JSON body containing t
 }
 ```
 
+## Deployment
+
+The APIs are deployed on [Spheron.network](https://app.spheron.network/) using its Compute Engine, a global, production-ready environment optimized for high-performance applications.
+
+Access the API documentation: [API Docs](http://provider.palmito.duckdns.org:31748/api-docs/).
+
+## Spheron Network
+
+Spheron is a Platform as a Service (PaaS) designed for dApps, providing compute, decentralized storage, CDN, and web hosting services out of the box. The Spheron Compute engine simplifies deployment, ensuring secure and encrypted connections, and facilitates containerization for efficient deployment and scalability.
+
+
+
