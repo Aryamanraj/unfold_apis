@@ -1,0 +1,220 @@
+swagger: "2.0"
+info:
+  title: "Auction API"
+  version: "1.0.0"
+paths:
+  /nft/mint:
+    post:
+      summary: "Mint Tokens"
+      description: "Mint a specific number of tokens."
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              numberOfTokens:
+                type: "integer"
+      responses:
+        200:
+          description: "Successful operation"
+        500:
+          description: "Error occurred"
+
+  /nft/current-time:
+    get:
+      summary: "Get Current Time"
+      description: "Retrieve the current time from the contract."
+      responses:
+        200:
+          description: "Successful operation"
+        500:
+          description: "Error occurred"
+
+  /nft/start-auction:
+    post:
+      summary: "Start Auction"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              tokenId:
+                type: "integer"
+              durationSeconds:
+                type: "integer"
+      responses:
+        200:
+          description: "Successful operation"
+        500:
+          description: "Error occurred"
+
+  # Add similar definitions for other endpoints here
+
+  /nft/token-uri/{tokenId}:
+    get:
+      summary: "Get Token URI"
+      parameters:
+        - in: "path"
+          name: "tokenId"
+          type: "integer"
+          required: true
+      responses:
+        200:
+          description: "Successful operation"
+        500:
+          description: "Error occurred"
+
+  /nft/tokens-details:
+    post:
+      summary: "Get Tokens Details"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              tokenIds:
+                type: "array"
+                items:
+                  type: "integer"
+      responses:
+        200:
+          description: "Successful operation"
+        500:
+          description: "Error occurred"
+
+  /nft/media-urls:
+    post:
+      summary: "Get Media URLs"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              tokenIds:
+                type: "array"
+                items:
+                  type: "integer"
+      responses:
+        200:
+          description: "Successful operation"
+        500:
+          description: "Error occurred"
+  /nft/highest-bid/{tokenId}:
+    get:
+      summary: "Get Highest Bid"
+      description: "Retrieve the highest bid for a given token ID."
+      parameters:
+        - in: "path"
+          name: "tokenId"
+          required: true
+          type: "integer"
+          format: "int64"
+          description: "The ID of the token."
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            type: "object"
+            properties:
+              success:
+                type: "boolean"
+              highestBid:
+                type: "string"
+                description: "The highest bid in Ether."
+        500:
+          description: "Error occurred"
+
+  /nft/highest-bidder/{tokenId}:
+    get:
+      summary: "Get Highest Bidder"
+      description: "Retrieve the address of the highest bidder for a given token ID."
+      parameters:
+        - in: "path"
+          name: "tokenId"
+          required: true
+          type: "integer"
+          format: "int64"
+          description: "The ID of the token."
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            type: "object"
+            properties:
+              success:
+                type: "boolean"
+              highestBidder:
+                type: "string"
+                description: "The address of the highest bidder."
+        500:
+          description: "Error occurred"
+  /nft/update-token-uri:
+    put:
+      summary: "Update Token URI"
+      description: "Update the URI of a specific token."
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              tokenId:
+                type: "integer"
+              newURI:
+                type: "string"
+      responses:
+        200:
+          description: "Successful operation"
+        500:
+          description: "Error occurred"
+
+  /nft/transfer-ownership:
+    post:
+      summary: "Transfer Ownership"
+      description: "Transfer the ownership of a specific token."
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              tokenId:
+                type: "integer"
+      responses:
+        200:
+          description: "Successful operation"
+        500:
+          description: "Error occurred"
+
+  /nft/owner/{tokenId}:
+    get:
+      summary: "Get Owner"
+      description: "Retrieve the owner of a specific token."
+      parameters:
+        - in: "path"
+          name: "tokenId"
+          required: true
+          type: "integer"
+          format: "int64"
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            type: "object"
+            properties:
+              success:
+                type: "boolean"
+              owner:
+                type: "string"
+        500:
+          description: "Error occurred"
